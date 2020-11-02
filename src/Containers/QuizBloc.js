@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Choice from "../Components/Choice/Choice";
 import Question from "../Components/Question/Question";
+import classes from "./QuizBloc.css";
 
 class QuizBloc extends Component {
   state = {
+    maxIndex: 2,
     index: 0,
     quiz: [
       {
@@ -26,16 +28,39 @@ class QuizBloc extends Component {
       },
     ],
   };
+  // constructor(props) {
+  //   super(props);
+  //   this.nextQuestion = this.nextQuestion.bind(this);
+  // }
+
+  nextQuestion() {
+    let currentIndex = this.state.index;
+    this.setState({ index: currentIndex + 1 });
+  }
+
+  onChanged(event) {
+    console.log(event.);
+  }
 
   render() {
     let choiceList = this.state.quiz[this.state.index];
     let choices = choiceList.answers.map((answer) => (
-      <Choice key={answer} label={answer} />
+      <Choice
+        key={answer}
+        label={answer}
+        onChanged={this.onChanged.bind(this)}
+      />
     ));
     return (
-      <div className="QuizBloc">
+      <div className={classes.QuizBloc}>
         <Question question={this.state.quiz[this.state.index].question} />
         {choices}
+        <button
+          onClick={this.nextQuestion.bind(this)}
+          className={classes.Button}
+        >
+          Next
+        </button>
       </div>
     );
   }

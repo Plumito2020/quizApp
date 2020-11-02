@@ -1,0 +1,22 @@
+.QuizBloc {
+  margin: auto;
+  /* border: 1px solid black; */
+  box-shadow: 2px 2px 5px rgb(173, 173, 173);
+  width: 500px;
+  height: 500px;
+  padding: 10px 10px;
+}
+
+.Button {
+  margin: auto;
+  background-color: cornflowerblue;
+  border: none;
+  color: white;
+  width: 100px;
+  padding: 5px 0px;
+  margin-top: 20px;
+}
+
+.Button:hover {
+  background-color: dodgerblue;
+}
