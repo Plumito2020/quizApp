@@ -1,0 +1,8 @@
+.Score {
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px 10px;
+  margin: auto;
+  margin-top: 40px;
+  width: 200px;
+}
