@@ -32,7 +32,7 @@ class QuizBloc extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.match);
+    console.log(this.props);
   }
   generateScore() {
     let finalScore = 0;
@@ -77,14 +77,21 @@ class QuizBloc extends Component {
     return (
       <div className={classes.QuizBloc}>
         <Question question={this.state.quiz[this.state.index].question} />
-        <div onChange={this.onChangeValue.bind(this)}>{choices}</div>
-
-        <button
-          onClick={this.nextQuestion.bind(this)}
-          className={classes.Button}
+        <div
+          onChange={this.onChangeValue.bind(this)}
+          className={classes.Choices}
         >
-          Next
-        </button>
+          {choices}
+        </div>
+
+        {this.state.gameFinished ? null : (
+          <button
+            onClick={this.nextQuestion.bind(this)}
+            className={classes.Button}
+          >
+            Next
+          </button>
+        )}
 
         {this.state.gameFinished ? (
           <Score score={this.state.score} replay={this.replay.bind(this)} />

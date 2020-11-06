@@ -1,4 +1,6 @@
 .QuizBloc {
+  display: flex;
+  flex-direction: column;
   margin: auto;
   margin-top: 20px;
   /* border: 1px solid black; */
@@ -9,6 +11,7 @@
 }
 
 .Button {
+  align-self: flex-end;
   margin: auto;
   text-align: center;
   background-color: #333;
@@ -21,4 +24,8 @@
 
 .Button:hover {
   background-color: #111;
+}
+
+.Choices {
+  flex: 2;
 }

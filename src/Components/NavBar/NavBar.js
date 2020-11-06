@@ -10,7 +10,7 @@ const navBar = () => (
       </NavLink>
     </li>
     <li className={classes.Il}>
-      <NavLink to="/profile" exact activeClassName={classes.ActiveLink}>
+      <NavLink to="/profile/zakaria" exact activeClassName={classes.ActiveLink}>
         My Profile
       </NavLink>
     </li>
